@@ -4,10 +4,10 @@ setlocal enabledelayedexpansion
 set "inputDir=C:\Users\jmkariuki\Documents\scripts\input"
 set "outputDir=C:\Users\jmkariuki\Documents\scripts\output"
 
-for /F "tokens=1-3 delims=/ " %%A in ('date /T') do (
-    set "day=%%A"
-    set "month=%%B"
-    set "year=%%C"
+for /F "usebackq tokens=1-3 delims=/ " %%A in (`powershell -Command "Get-Date -Format 'yyyy/MM/dd'"`) do (
+    set "day=0%%C"
+    set "month=0%%B"
+    set "year=%%A"
 )
 
 set "day=!day:~-2!"
