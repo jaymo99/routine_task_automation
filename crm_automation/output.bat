@@ -19,7 +19,7 @@ if not exist "%outputDir%\%dateStamp%" mkdir "%outputDir%\%dateStamp%"
 for %%F in ("%inputDir%\*") do (
     set "fileName=%%~nF"
     set "extension=%%~xF"
-    set "outputFile=!fileName!_output!extension!"
+    set "outputFile=!fileName!!extension!"
     set "outputPath=%outputDir%\%dateStamp%\!outputFile!"
     
     move "%%F" "!outputPath!" > nul
